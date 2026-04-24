@@ -1,19 +1,28 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     class Role(models.TextChoices):
         ADMIN = 'admin', 'Admin'
+        ACCOUNT_MANAGER = 'account_manager', 'Account Manager'
+        CREATIVE = 'creative', 'Creative'
         CLIENT = 'client', 'Client'
-        GUEST = 'guest', 'Guest'
 
-    role = models.CharField(max_length=10, choices=Role.choices, default=Role.GUEST)
+    role = models.CharField(max_length=20, choices=Role.choices, default=Role.CLIENT)
     email = models.EmailField(unique=True)
 
     def __str__(self):
         return f"{self.username} ({self.get_role_display()})"
     
 class Client(models.Model):
+
+    # one login user maps to one client
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True, blank=True)
+
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone_number = models.CharField(max_length=10, blank=True) # optional field for contact number
@@ -61,7 +70,7 @@ class Task(models.Model):
         blank=True, null=True) # null/blank true so task can exist without being assigned to anyone
     
     deadline = models.DateField(null=True, blank=True) # optional deadline for task
-    status = models.CharField(max_length=10, choices=Status.choices, default=Status.TODO)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.TODO)
     priority = models.CharField(max_length=10, choices=Priority.choices, default=Priority.LOW)
 
     def __str__(self):
