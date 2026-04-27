@@ -1,0 +1,177 @@
+[
+{
+  "model": "mysite.user",
+  "pk": 2,
+  "fields": {
+    "password": "password",
+    "last_login": "2026-04-27T19:13:02Z",
+    "is_superuser": false,
+    "username": "user1",
+    "first_name": "user",
+    "last_name": "userson",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:12:36Z",
+    "role": "client",
+    "email": "user1@user1.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$GJToS4wbufaLwvkZ4FW0P5$Q1LijTBq/KVhgUdU8EO1kX/jz0WHJgutwcNzSPGfqN8=",
+    "last_login": "2026-04-27T19:50:10.779Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:19:17Z",
+    "role": "admin",
+    "email": "admin@admin.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$7Cr1ANmszqd5CQ68YtW7Jl$TDT8lr1dCFiMOI3u15ML+U33hH/trUmCYTYbivtBQcQ=",
+    "last_login": "2026-04-27T19:51:38.740Z",
+    "is_superuser": false,
+    "username": "user2",
+    "first_name": "creat",
+    "last_name": "ive",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:24:13Z",
+    "role": "creative",
+    "email": "user2@user.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cYmLKKOntlsZmrHs0CTkX0$M+WgOpmqBmNV6IISLhkFWW53DRsUEAKf+oSdasSiocc=",
+    "last_login": "2026-04-27T19:49:07.491Z",
+    "is_superuser": false,
+    "username": "user3",
+    "first_name": "Account",
+    "last_name": "Manager",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:47:49.316Z",
+    "role": "account_manager",
+    "email": "user3@user3.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$0AMElZrT7SUOxDtc8FWSdw$IPCn3KOSyB1sT5h7uWWAha9chUeHAbluJioWCbMnA3I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user4",
+    "first_name": "Philly",
+    "last_name": "Client",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:48:23.461Z",
+    "role": "client",
+    "email": "user4@user4.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$RKXN9EtvlTz98Zw7jWN3Rv$3rFtW/tmiG9P7dM8EX5Vo5PVlccVN2UomKayWVDJORk=",
+    "last_login": "2026-04-27T19:51:47.268Z",
+    "is_superuser": false,
+    "username": "user5",
+    "first_name": "creative",
+    "last_name": "2",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-04-27T19:50:53.076Z",
+    "role": "creative",
+    "email": "user5@user5.com",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "mysite.client",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "name": "Philly's Flipflops",
+    "email": "client@client.com",
+    "phone_number": "",
+    "company_name": "Philly's Flipflops"
+  }
+},
+{
+  "model": "mysite.campaign",
+  "pk": 1,
+  "fields": {
+    "client": 1,
+    "campaign_name": "FlipperFlopper 4 kids",
+    "status": "active",
+    "start_date": "2026-04-27",
+    "end_date": "2026-04-27"
+  }
+},
+{
+  "model": "mysite.task",
+  "pk": 1,
+  "fields": {
+    "campaign": 1,
+    "title": "Create Bus Ads",
+    "description": "Create Dublin Bus ads for Philly's new \"FlipperFlopper 4 kids\" children's flipflop line.",
+    "assigned_to": 4,
+    "deadline": "2026-04-30",
+    "status": "In Progress",
+    "priority": "High"
+  }
+},
+{
+  "model": "mysite.task",
+  "pk": 2,
+  "fields": {
+    "campaign": 1,
+    "title": "Spread Social Media Posts",
+    "description": "Create social media posts to be advertised on instagram",
+    "assigned_to": 4,
+    "deadline": null,
+    "status": "To Do",
+    "priority": "Medium"
+  }
+},
+{
+  "model": "mysite.task",
+  "pk": 3,
+  "fields": {
+    "campaign": 1,
+    "title": "Spread Flyers",
+    "description": "Go door to door in coolock giving the flip flop flyers",
+    "assigned_to": 7,
+    "deadline": null,
+    "status": "To Do",
+    "priority": "Low"
+  }
+}
+]
